@@ -13,7 +13,7 @@ int main() {
     num = num & mask;
 
     // Print the modified number
-    printf("The number after clearing the %d-th bit is: %d\n", n, num);
+    printf("%d\n", n, num);
 
     return 0;
 }
