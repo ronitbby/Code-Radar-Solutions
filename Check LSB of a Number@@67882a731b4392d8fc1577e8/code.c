@@ -8,9 +8,9 @@ int main() {
 
     // Check if the LSB is set (1) or not (0)
     if (num & 1) {
-        printf("set");
+        printf("Set");
     } else {
-        printf("not set");
+        printf("Not Set");
     }
 
     return 0;
