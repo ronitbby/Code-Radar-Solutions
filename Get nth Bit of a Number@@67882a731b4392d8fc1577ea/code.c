@@ -8,9 +8,9 @@ int main() {
 
     // Check if the n-th bit is set or not
     if (num & (1 << n)) {
-        printf("The %d-th bit is set (1)\n", n);
+        printf("1", n);
     } else {
-        printf("The %d-th bit is not set (0)\n", n);
+        printf("0", n);
     }
 
     return 0;
