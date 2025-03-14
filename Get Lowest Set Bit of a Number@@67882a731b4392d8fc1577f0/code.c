@@ -3,7 +3,7 @@
 int main() {
     int num;
 
-    // Input the number
+    // Input a single integer
     scanf("%d", &num);
 
     // Get the lowest set bit using bitwise AND
