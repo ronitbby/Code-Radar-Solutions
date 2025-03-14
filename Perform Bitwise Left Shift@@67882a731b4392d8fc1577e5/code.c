@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 int main() {
-    int a, b;
+    int num, shiftAmount;
 
-    // Input two integers
-    scanf("%d %d", &a, &b);
+    // Input the integer and the number of positions to shift
+    scanf("%d %d", &num, &shiftAmount);
 
-    // Perform and print the bitwise OR operation
-    printf("b<<1 = %u\n", b << 1);
+    // Perform and print the bitwise left shift operation
+    printf("%d\n", num << shiftAmount);
+
     return 0;
 }
