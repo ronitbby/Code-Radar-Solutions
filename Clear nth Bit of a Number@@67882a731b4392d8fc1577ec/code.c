@@ -13,7 +13,7 @@ int main() {
     num = num & mask;
 
     // Print the modified number
-    printf(": %d\n", n, num);
+    printf("%d\n", num);
 
     return 0;
 }
