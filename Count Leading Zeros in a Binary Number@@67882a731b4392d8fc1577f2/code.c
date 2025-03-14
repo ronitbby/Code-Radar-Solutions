@@ -1,32 +1,30 @@
 #include <stdio.h>
 
-int countLeadingZeros(int num) {
+int countLeadingZeros(unsigned int num) {
     int count = 0;
 
-    // Shift the number right until the number becomes 0
-    while (num) {
-        num >>= 1;
-        count++;
+    // Special case for zero
+    if (num == 0) {
+        return sizeof(unsigned int) * 8;  // If number is zero, return 32 leading zeros
     }
 
-    // Subtract the number of shifts from the total number of bits (32 bits in typical int)
-    return (sizeof(int) * 8) - count;
+    // Count leading zeros by shifting
+    while ((num & (1 << (sizeof(unsigned int) * 8 - 1))) == 0) {
+        count++;
+        num <<= 1;  // Shift left by 1
+    }
+
+    return count;
 }
 
 int main() {
-    int num;
+    unsigned int num;
 
     // Input the number
-    scanf("%d", &num);
+    scanf("%u", &num);
 
-    // Handle the special case for 0 (since 0 has no leading 1s)
-    if (num == 0) {
-        printf("32\n"); // If number is 0, it has 32 leading zeros in a 32-bit integer
-    } else {
-        // Output the count of leading zeros
-        printf("%d\n", countLeadingZeros(num));
-    }
+    // Output the count of leading zeros
+    printf("%d\n", countLeadingZeros(num));
 
     return 0;
 }
-
