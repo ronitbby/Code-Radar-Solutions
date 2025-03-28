@@ -1,23 +1,12 @@
 #include <stdio.h>
 
 int main() {
-    int num;
-
-    // Input the number
+    int num, a = 1, pos = 0;
     scanf("%d", &num);
-
-    // Get the lowest set bit
-    int lowest_bit = num & (-num);
-
-    // Find the position of the lowest set bit
-    int position = 0;
-    while (lowest_bit > 1) {
-        lowest_bit >>= 1;  // Shift right by 1
-        position++;        // Increment the position
+    while(!(num & a)) {
+        a <<= 1;
+        pos++;
     }
-
-    // Print the position of the lowest set bit (1-based indexing)
-    printf("%d\n", position + 1);
-
+    printf("%d", pos);
     return 0;
 }
